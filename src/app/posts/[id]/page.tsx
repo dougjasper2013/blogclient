@@ -1,8 +1,8 @@
-import { Suspense } from 'react';
+// import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
-import { Loading } from '@/components/Loading';
+//import { Loading } from '@/components/Loading';
 import { PostDetail } from '@/components/PostDetail';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
+//import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 export default async function Post({
   params,
@@ -14,12 +14,8 @@ export default async function Post({
     notFound();
   }
   return (
-    <main>
-      <Suspense fallback={<Loading />}>
-        <ErrorBoundary>
-          <PostDetail id={id} />
-        </ErrorBoundary>
-      </Suspense>
+    <main>      
+      <PostDetail id={id} />        
     </main>
   );
 }
