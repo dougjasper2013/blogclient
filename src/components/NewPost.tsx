@@ -17,7 +17,7 @@ export function NewPost() {
         description: string;
       }) => createPost(title, description),
       onSuccess: async () => {
-        queryClient.invalidateQueries({
+        await queryClient.invalidateQueries({
           queryKey: ['posts'],
         });
       },
